@@ -18,6 +18,16 @@ public class HomeController : Controller
         return View();
     }
 
+        public IActionResult Join()
+    {
+        return View();
+    }
+
+        public IActionResult Fees()
+    {
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         return View();
