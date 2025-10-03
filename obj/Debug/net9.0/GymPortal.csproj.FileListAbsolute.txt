@@ -22,7 +22,6 @@
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/scopedcss/bundle/GymPortal.styles.css
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/scopedcss/projectbundle/GymPortal.bundle.scp.css
-/Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/compressed/p3qcv14fci-b9sayid5wm.gz
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/compressed/78cdleif11-61n19gt1b8.gz
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/compressed/i7paylmoty-xtxxf3hu2r.gz
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/compressed/mq6ii5vtwf-bqjiyaj88i.gz
@@ -95,3 +94,4 @@
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/GymPortal.pdb
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/GymPortal.genruntimeconfig.cache
 /Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/ref/GymPortal.dll
+/Users/aarizmohammed/Prog30000Assignment1/GymPortal/obj/Debug/net9.0/compressed/p3qcv14fci-pyn3xr7ktq.gz

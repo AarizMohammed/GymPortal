@@ -1,0 +1,40 @@
+﻿@model GymPortal.Models.MemberSignupViewModel
+@{
+    ViewBag.Title = "Thank You!";
+}
+
+<div class="alert alert-success mt-4 p-5 text-center">
+    <h1 class="display-4">🎉 Thank You, @Model.Name!</h1>
+    <p class="lead">Your registration for <strong>@Model.MembershipType</strong> membership is complete!</p>
+    <hr>
+    
+    <p>Email: @Model.Email</p>
+    <p>Phone: @Model.Phone</p>
+    <p>Age: @Model.Age</p>
+
+    <p class="mt-4 text-muted">You are the <strong>@ViewBag.MemberCount</strong> person to sign up for the gym!</p>
+
+    @if (Model.MembershipType == "Yearly" && Model.Discount > 0)
+    {
+        <div class="alert alert-info mt-3">
+            <h4 class="alert-heading">Your Exclusive Yearly Discount: @Model.Discount%!</h4>
+            
+            @* Display special message depending on discount size *@
+            @if (Model.Discount >= 75)
+            {
+                <p>That's an amazing, top-tier discount! You've unlocked maximum savings!</p>
+            }
+            else if (Model.Discount >= 50)
+            {
+                <p>That's a fantastic half-price or better deal! Enjoy the savings.</p>
+            }
+            else
+            {
+                <p>A valuable discount to help you get started on your yearly plan!</p>
+            }
+        </div>
+    }
+    
+    <hr>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg">Back to Home</a>
+</div>

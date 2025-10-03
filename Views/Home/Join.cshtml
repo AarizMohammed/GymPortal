@@ -1,61 +1,52 @@
-
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@ 
 @{
-    ViewData["Title"] = "Sign Up";
+    ViewData["Title"] = "Join Us";
 }
-
 <style>
-    .error-message { color: #d32f2f; font-size: 0.95rem; margin-top: 4px; }
-    .invalid-field { border: 2px solid #d32f2f !important; background: #fff0f0; }
     .form-group { margin-bottom: 18px; }
-    .thank-you { text-align: center; margin-top: 40px; }
+    label { display: block; margin-bottom: 6px; font-weight: bold; }
+    input, select { width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
+    .invalid-field { border: 2px solid #d32f2f !important; background: #fff0f0; }
+    .error-message { color: #d32f2f; font-size: 0.95rem; margin-top: 4px; }
+    .signup-container { max-width: 480px; margin: 40px auto; background: #f7f7f7; border-radius: 12px; box-shadow: 0 2px 12px #ccc; padding: 32px; }
+    h2 { text-align: center; color: #2c5364; }
 </style>
 
-<div style="max-width:480px; margin:40px auto; background:#f7f7f7; border-radius:12px; box-shadow:0 2px 12px #ccc; padding:32px;">
-    <h2 style="text-align:center; color:#2c5364;">Member Signup</h2>
-    <form id="signupForm" autocomplete="off">
-
-
-        <!-- Member Signup Form (HTML only, no Razor, no JS) -->
-        <style>
-            .form-group { margin-bottom: 18px; }
-            label { display: block; margin-bottom: 6px; font-weight: bold; }
-            input, select { width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
-            button { width: 100%; background: #2c5364; color: #fff; font-size: 1.1rem; padding: 10px 0; border: none; border-radius: 6px; margin-top: 10px; }
-            .signup-container { max-width: 480px; margin: 40px auto; background: #f7f7f7; border-radius: 12px; box-shadow: 0 2px 12px #ccc; padding: 32px; }
-            h2 { text-align: center; color: #2c5364; }
-        </style>
-
-        <div class="signup-container">
-            <h2>Member Signup</h2>
-            <form autocomplete="off">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" minlength="3" required />
-                </div>
-                <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="number" id="age" name="age" min="16" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" pattern="\d{10,}" required />
-                </div>
-                <div class="form-group">
-                    <label for="membership">Membership Type</label>
-                    <select id="membership" name="membership" required>
-                        <option value="">Select...</option>
-                        <option value="Monthly">Monthly</option>
-                        <option value="Quarterly">Quarterly</option>
-                        <option value="Yearly">Yearly</option>
-                    </select>
-                </div>
-                <button type="submit">Sign Up</button>
-            </form>
+<div class="signup-container">
+    <h2>Member Signup</h2>
+    <form method="post" autocomplete="off">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" minlength="3" required />
         </div>
-        </ul>
-
-        <p>You are the <strong>${memberCount}</strong>th person to sign up for the gym.</p>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="Age" min="16" required />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required />
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="Phone" pattern="\d{10,}" required />
+        </div>
+        <div class="form-group">
+            <label for="membership">Membership Type</label>
+            <select id="membership" name="MembershipType" required>
+                <option value="">Select...</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Yearly">Yearly</option>
+            </select>
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
