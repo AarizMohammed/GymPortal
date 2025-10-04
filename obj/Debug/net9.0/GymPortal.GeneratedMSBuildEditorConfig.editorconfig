@@ -28,6 +28,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/aarizmohammed/Prog30000Assignment1/GymPortal/Views/Admin/Members.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTWVtYmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/aarizmohammed/Prog30000Assignment1/GymPortal/Views/Admin/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/aarizmohammed/Prog30000Assignment1/GymPortal/Views/Home/Fees.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9GZWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

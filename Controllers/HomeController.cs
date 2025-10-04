@@ -6,13 +6,19 @@ namespace GymPortal.Controllers;
 
 public class HomeController : Controller
 {
+    //for reference
     private readonly ILogger<HomeController> _logger;
+    private readonly IMemberRepository _memberRepository;
 
-    public HomeController(ILogger<HomeController> logger)
+    //constructor definition
+    public HomeController(ILogger<HomeController> logger, IMemberRepository memberRepository)
     {
         _logger = logger;
+        _memberRepository = memberRepository;
     }
 
+
+    //IactionResult methods for each view
     public IActionResult Index()
     {
         return View();
@@ -44,7 +50,7 @@ public class HomeController : Controller
 
     public IActionResult Join(MemberSignupViewModel model)
     {
-        // 1. Custom Uniqueness Checks (Must happen first, adding errors to ModelState)
+        // 1. Check Unique Constraints (Email, Phone)
         if (members.Any(m => m.Email == model.Email))
         {
             ModelState.AddModelError("Email", "This email is already registered.");
@@ -55,45 +61,46 @@ public class HomeController : Controller
             ModelState.AddModelError("Phone", "This phone number is already registered.");
         }
 
-        // 2. Check ALL Validation (Data Annotations + Unique Checks)
+        
         if (ModelState.IsValid)
         {
-            // 3. Special Case: Generate Discount (only if valid)
+            
             if (model.MembershipType == "Yearly")
             {
                 var rand = new Random();
-                // Generate random discount value between 1 and 100
+                
                 model.Discount = rand.Next(1, 101);
             }
+
+
             else
             {
-                model.Discount = 0; // Set discount to 0 for non-yearly members
+                model.Discount = 0; 
             }
 
-            // 4. Save Member (Only runs once, with discount saved in the model)
+            
             members.Add(model);
 
-            // 5. Redirect to Thank You Page, passing the model for the summary
-            // The model contains the saved discount and member data.
+            
             return RedirectToAction("ThankYou", model);
         }
 
-        // If validation failed, return the view with errors
+        
         return View(model);
     }
     
     public IActionResult ThankYou(MemberSignupViewModel model)
     {
-        // Check if data was passed via redirect (or prevent saving if accessed directly)
+        
         if (model == null || string.IsNullOrEmpty(model.Name))
         {
             return RedirectToAction("Index");
         }
 
-    // Get the total count from the list (for the "Nth person" message)
+    
         ViewBag.MemberCount = members.Count;
 
-    // Pass the model (containing the summary/discount) to the view
+    
         return View(model);
     }
 }

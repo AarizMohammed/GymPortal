@@ -1,0 +1,50 @@
+﻿@model GymPortal.Models.MemberSignupViewModel
+@{
+    ViewData["Title"] = "Search Members";
+}
+
+<h2 class="text-center" style="margin-top:40px; color:#ffd700;">Search Members</h2>
+
+<div style="max-width:500px; margin:20px auto; background:#f7f7f7; border-radius:10px; box-shadow:0 2px 8px #ccc; padding:20px;">
+    <form method="get" asp-controller="Admin" asp-action="Search">
+        <div class="form-group">
+            <label for="query" style="color:#333; font-weight:bold;">Search by Email or Phone</label>
+            
+            <input type="text" name="query" id="query" class="form-control" placeholder="Enter Email or Phone Number" required />
+        </div>
+        
+        <button type="submit" class="btn btn-primary mt-3" style="width:100%; background:#2c5364; border-color:#2c5364;">Search</button>
+    </form>
+</div>
+
+@if (ViewBag.Message != null)
+{
+    
+    <div class="alert alert-danger text-center mt-4" style="max-width:500px; margin:0 auto;">
+
+        @ViewBag.Message
+    </div>
+}
+
+
+else if (Model != null)
+{
+    
+    <div class="card mt-4" style="max-width:500px; margin:0 auto; border-radius:10px; border:2px solid #2c5364;">
+        
+        <div class="card-header" style="background:#2c5364; color:white; font-size:1.2rem; font-weight:bold;">
+            Member Found: @Model.Name
+        
+        </div>
+        <ul class="list-group list-group-flush" style="color:#333;">
+            <li class="list-group-item"><strong>Age:</strong> @Model.Age</li>
+            
+            <li class="list-group-item"><strong>Email:</strong> @Model.Email</li>
+            <li class="list-group-item"><strong>Phone:</strong> @Model.Phone</li>
+            
+            <li class="list-group-item"><strong>Membership Type:</strong> @Model.MembershipType</li>
+            <li class="list-group-item"><strong>Discount:</strong> @Model.Discount %</li>
+        
+        </ul>
+    </div>
+}

@@ -1,9 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
+using GymPortal.Models;
 
 namespace GymPortal.Controllers
 {
     public class AdminController : Controller
     {
+        //for reference
+        private readonly IMemberRepository _memberRepository;
+        public AdminController(IMemberRepository memberRepository)
+        {
+            _memberRepository = memberRepository;
+        }
+
+        //IactionResult methods for each view
         public IActionResult Login()
         {
             return View();
